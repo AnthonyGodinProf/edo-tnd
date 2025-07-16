@@ -1,0 +1,1840 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infographie : Les Troubles du Neurodéveloppement (TND)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+        }
+        .header-title {
+            font-family: 'Poppins', sans-serif;
+        }
+        .tab-button {
+            transition: all 0.3s ease;
+        }
+        .tab-button.active {
+            background-color: #3b82f6;
+            color: white;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        }
+        .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        }
+        .details {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.7s ease-in-out;
+        }
+        .details.open {
+            max-height: 1500px; /* Adjust as needed for content */
+        }
+        .comparison-table td, .comparison-table th {
+            border: 1px solid #e5e7eb;
+            padding: 12px;
+            text-align: left;
+        }
+        .icon {
+            width: 40px;
+            height: 40px;
+        }
+        .rotate-180 {
+            transform: rotate(180deg);
+        }
+        .transition-transform {
+            transition: transform 0.3s ease;
+        }
+        .quiz-option {
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        .quiz-option.correct {
+            background-color: #dcfce7; /* green-100 */
+            border-color: #22c55e; /* green-500 */
+        }
+        .quiz-option.incorrect {
+            background-color: #fee2e2; /* red-100 */
+            border-color: #ef4444; /* red-500 */
+        }
+        .quiz-option.disabled {
+            cursor: not-allowed;
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 p-4 sm:p-6 md:p-8">
+
+
+    <div class="max-w-6xl mx-auto">
+
+
+        <!-- Header -->
+        <header class="mb-12 text-left">
+            <h1 class="header-title text-4xl md:text-5xl font-bold text-blue-600">Les Troubles du Neurodéveloppement (TND)</h1>
+            <p class="mt-4 text-lg text-slate-600 max-w-3xl">Une vue d'ensemble interactive des définitions, classifications et évolutions.</p>
+        </header>
+
+
+        <!-- Definition Section -->
+        <section class="mb-12 bg-white p-6 rounded-xl shadow-md border border-slate-200 text-left">
+            <h2 class="header-title text-2xl font-bold text-slate-800 mb-4">Qu'est-ce qu'un TND ?</h2>
+            <p class="text-slate-600 mb-3">Les troubles du neurodéveloppement (TND) sont un ensemble d'affections qui débutent durant la période de développement, typiquement avant l'entrée à l'école. Ils se caractérisent par des déficits qui entraînent une altération du fonctionnement personnel, social, scolaire ou professionnel.</p>
+            <p class="text-slate-600">Touchant <strong>5 à 10% de la population</strong>, ces troubles résultent d'une perturbation du développement cérébral et affectent l'acquisition de fonctions intellectuelles, motrices, langagières ou sociales.</p>
+        </section>
+
+
+        <!-- Tabs for CIM-11 and DSM-5-TR -->
+        <div class="mb-8 flex justify-center space-x-2 md:space-x-4">
+            <button id="btn-cim11" class="tab-button active font-semibold py-3 px-6 rounded-lg bg-slate-200 text-slate-700">CIM-11</button>
+            <button id="btn-dsm5" class="tab-button font-semibold py-3 px-6 rounded-lg bg-slate-200 text-slate-700">DSM-5-TR</button>
+        </div>
+
+
+        <!-- Tab Content -->
+        <main>
+            <!-- CIM-11 Content -->
+            <div id="content-cim11" class="space-y-6">
+                <!-- Card Template -->
+                <div class="card bg-white rounded-xl shadow-md border border-slate-200 overflow-hidden" data-card>
+                    <div class="p-5 flex justify-between items-center cursor-pointer">
+                        <div class="flex items-center space-x-4 text-left">
+                            <div class="icon text-blue-500 flex-shrink-0"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10"><path stroke-linecap="round" stroke-linejoin="round" d="M12 18.75a6 6 0 006-6v-1.5m-6 7.5a6 6 0 01-6-6v-1.5m6 7.5v3.75m-3.75 0h7.5M12 15.75a3 3 0 01-3-3V4.5a3 3 0 116 0v8.25a3 3 0 01-3 3z" /></svg></div>
+                            <div>
+                                <h3 class="font-bold text-xl text-slate-800">Troubles du développement intellectuel (6A00)</h3>
+                                <p class="text-slate-500">Fonctionnement intellectuel et adaptatif significativement sous la moyenne.</p>
+                            </div>
+                        </div>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6 text-slate-500 transition-transform chevron"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" /></svg>
+                    </div>
+                    <div class="details">
+                        <div class="p-5 border-t border-slate-200 bg-slate-50 text-left">
+                            <h4 class="font-semibold mb-2">Sous-catégories :</h4>
+                            <ul class="list-disc list-inside text-slate-600 space-y-1">
+                                <li>Léger (6A00.0), Modéré (6A00.1), Sévère (6A00.2), Profond (6A00.3), Provisoire (6A00.4).</li>
+                            </ul>
+                            <h4 class="font-semibold mt-4 mb-2">Particularités CIM-11 :</h4>
+                            <p class="text-slate-600">Utilise le terme "troubles du développement intellectuel" et propose des indicateurs comportementaux en l'absence de tests standardisés.</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="card bg-white rounded-xl shadow-md border border-slate-200 overflow-hidden" data-card>
+                    <div class="p-5 flex justify-between items-center cursor-pointer">
+                        <div class="flex items-center space-x-4 text-left">
+                            <div class="icon text-teal-500 flex-shrink-0"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10"><path stroke-linecap="round" stroke-linejoin="round" d="M12 20.25c4.97 0 9-3.694 9-8.25s-4.03-8.25-9-8.25S3 7.444 3 12s4.03 8.25 9 8.25zM9.75 9.75c0-1.244 1.006-2.25 2.25-2.25s2.25 1.006 2.25 2.25m-4.5 6c0-1.244 1.006-2.25 2.25-2.25s2.25 1.006 2.25 2.25" /></svg></div>
+                            <div>
+                                <h3 class="font-bold text-xl text-slate-800">Troubles développementaux de la parole ou du langage (6A01)</h3>
+                                <p class="text-slate-500">Déficits dans l'acquisition et l'utilisation de la parole et du langage.</p>
+                            </div>
+                        </div>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6 text-slate-500 transition-transform chevron"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" /></svg>
+                    </div>
+                    <div class="details">
+                        <div class="p-5 border-t border-slate-200 bg-slate-50 text-left">
+                            <h4 class="font-semibold mb-2">Inclut :</h4>
+                            <ul class="list-disc list-inside text-slate-600 space-y-1">
+                                <li>Trouble des sons de la parole (6A01.0)</li>
+                                <li>Trouble de la fluence verbale (6A01.1)</li>
+                                <li>Trouble développemental du langage (6A01.2), qui inclut le <strong>trouble du langage pragmatique</strong> (6A01.22).</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="card bg-white rounded-xl shadow-md border border-slate-200 overflow-hidden" data-card>
+                    <div class="p-5 flex justify-between items-center cursor-pointer">
+                        <div class="flex items-center space-x-4 text-left">
+                            <div class="icon text-purple-500 flex-shrink-0"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10"><path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z" /></svg></div>
+                            <div>
+                                <h3 class="font-bold text-xl text-slate-800">Trouble du spectre de l'autisme (6A02)</h3>
+                                <p class="text-slate-500">Déficits de communication sociale et comportements restreints/répétitifs.</p>
+                            </div>
+                        </div>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6 text-slate-500 transition-transform chevron"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" /></svg>
+                    </div>
+                    <div class="details">
+                        <div class="p-5 border-t border-slate-200 bg-slate-50 text-left">
+                            <h4 class="font-semibold mb-2">Caractéristiques :</h4>
+                            <ul class="list-disc list-inside text-slate-600 space-y-1">
+                                <li>Déficits persistants dans la communication et l'interaction sociales.</li>
+                                <li>Patterns de comportements, intérêts ou activités restreints et répétitifs.</li>
+                                <li>La comorbidité avec le TDAH est explicitement reconnue.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="card bg-white rounded-xl shadow-md border border-slate-200 overflow-hidden" data-card>
+                    <div class="p-5 flex justify-between items-center cursor-pointer">
+                        <div class="flex items-center space-x-4 text-left">
+                            <div class="icon text-amber-500 flex-shrink-0"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" /></svg></div>
+                            <div>
+                                <h3 class="font-bold text-xl text-slate-800">Trouble développemental de l'apprentissage (6A03)</h3>
+                                <p class="text-slate-500">Difficultés en lecture, écriture ou mathématiques.</p>
+                            </div>
+                        </div>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6 text-slate-500 transition-transform chevron"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" /></svg>
+                    </div>
+                    <div class="details">
+                        <div class="p-5 border-t border-slate-200 bg-slate-50 text-left">
+                            <h4 class="font-semibold mb-2">Catégories distinctes :</h4>
+                             <ul class="list-disc list-inside text-slate-600 space-y-1">
+                                <li>Avec déficit en lecture (6A03.0)</li>
+                                <li>Avec déficit de l'expression écrite (6A03.1)</li>
+                                <li>Avec déficit en mathématiques (6A03.2)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="card bg-white rounded-xl shadow-md border border-slate-200 overflow-hidden" data-card>
+                    <div class="p-5 flex justify-between items-center cursor-pointer">
+                        <div class="flex items-center space-x-4 text-left">
+                             <div class="icon text-rose-500 flex-shrink-0"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" /></svg></div>
+                            <div>
+                                <h3 class="font-bold text-xl text-slate-800">Trouble déficitaire de l'attention avec hyperactivité (6A05)</h3>
+                                <p class="text-slate-500">Pattern persistant d'inattention et/ou d'hyperactivité-impulsivité.</p>
+                            </div>
+                        </div>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6 text-slate-500 transition-transform chevron"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" /></svg>
+                    </div>
+                    <div class="details">
+                        <div class="p-5 border-t border-slate-200 bg-slate-50 text-left">
+                             <h4 class="font-semibold mb-2">Présentations :</h4>
+                             <ul class="list-disc list-inside text-slate-600 space-y-1">
+                                <li>Prédominance inattentive (6A05.0)</li>
+                                <li>Prédominance hyperactive-impulsive (6A05.1)</li>
+                                <li>Combinée (6A05.2)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="card bg-white rounded-xl shadow-md border border-slate-200 overflow-hidden" data-card>
+                    <div class="p-5 flex justify-between items-center cursor-pointer">
+                        <div class="flex items-center space-x-4 text-left">
+                            <div class="icon text-cyan-500 flex-shrink-0"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /><path stroke-linecap="round" stroke-linejoin="round" d="M9 9.563C9 9.252 9.252 9 9.563 9h4.874c.311 0 .563.252.563.563v4.874c0 .311-.252.563-.563.563H9.564A.562.562 0 019 14.437V9.564z" /></svg></div>
+                            <div>
+                                <h3 class="font-bold text-xl text-slate-800">Autres troubles TND (CIM-11)</h3>
+                                <p class="text-slate-500">Coordination motrice, mouvements stéréotypés et tics.</p>
+                            </div>
+                        </div>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6 text-slate-500 transition-transform chevron"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" /></svg>
+                    </div>
+                    <div class="details">
+                        <div class="p-5 border-t border-slate-200 bg-slate-50 text-left">
+                             <ul class="list-disc list-inside text-slate-600 space-y-3">
+                                <li><strong>Trouble développemental de la coordination motrice (6A04):</strong> Retard significatif dans l'acquisition des compétences motrices.</li>
+                                <li><strong>Trouble des mouvements stéréotypés (6A06):</strong> Mouvements répétitifs, volontaires et sans but.</li>
+                                <li><strong>Troubles des tics (8A05):</strong> Point important, ils sont classés dans les <strong>maladies du système nerveux</strong> et non dans les TND pour la CIM-11.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- DSM-5-TR Content -->
+            <div id="content-dsm5" class="hidden space-y-6">
+                <!-- Card Template -->
+                 <div class="card bg-white rounded-xl shadow-md border border-slate-200 overflow-hidden" data-card>
+                    <div class="p-5 flex justify-between items-center cursor-pointer">
+                        <div class="flex items-center space-x-4 text-left">
+                            <div class="icon text-blue-500 flex-shrink-0"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10"><path stroke-linecap="round" stroke-linejoin="round" d="M12 18.75a6 6 0 006-6v-1.5m-6 7.5a6 6 0 01-6-6v-1.5m6 7.5v3.75m-3.75 0h7.5M12 15.75a3 3 0 01-3-3V4.5a3 3 0 116 0v8.25a3 3 0 01-3 3z" /></svg></div>
+                            <div>
+                                <h3 class="font-bold text-xl text-slate-800">Trouble du développement intellectuel</h3>
+                                <p class="text-slate-500">Déficits du fonctionnement intellectuel et du comportement adaptatif.</p>
+                            </div>
+                        </div>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6 text-slate-500 transition-transform chevron"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" /></svg>
+                    </div>
+                    <div class="details">
+                        <div class="p-5 border-t border-slate-200 bg-slate-50 text-left">
+                            <h4 class="font-semibold mb-2">Caractéristiques :</h4>
+                            <ul class="list-disc list-inside text-slate-600 space-y-1">
+                                <li>Début durant la période développementale.</li>
+                                <li>La sévérité est déterminée par le fonctionnement adaptatif.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="card bg-white rounded-xl shadow-md border border-slate-200 overflow-hidden" data-card>
+                    <div class="p-5 flex justify-between items-center cursor-pointer">
+                        <div class="flex items-center space-x-4 text-left">
+                            <div class="icon text-teal-500 flex-shrink-0"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10"><path stroke-linecap="round" stroke-linejoin="round" d="M12 20.25c4.97 0 9-3.694 9-8.25s-4.03-8.25-9-8.25S3 7.444 3 12s4.03 8.25 9 8.25zM9.75 9.75c0-1.244 1.006-2.25 2.25-2.25s2.25 1.006 2.25 2.25m-4.5 6c0-1.244 1.006-2.25 2.25-2.25s2.25 1.006 2.25 2.25" /></svg></div>
+                            <div>
+                                <h3 class="font-bold text-xl text-slate-800">Troubles de la communication</h3>
+                                <p class="text-slate-500">Déficits dans différents aspects de la communication.</p>
+                            </div>
+                        </div>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6 text-slate-500 transition-transform chevron"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" /></svg>
+                    </div>
+                    <div class="details">
+                        <div class="p-5 border-t border-slate-200 bg-slate-50 text-left">
+                            <h4 class="font-semibold mb-2">Inclut :</h4>
+                            <ul class="list-disc list-inside text-slate-600 space-y-1">
+                                <li>Trouble du langage</li>
+                                <li>Trouble de la parole</li>
+                                <li>Trouble de la fluence (bégaiement)</li>
+                                <li><strong>Trouble de la communication sociale (pragmatique)</strong> - Catégorie séparée.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="card bg-white rounded-xl shadow-md border border-slate-200 overflow-hidden" data-card>
+                    <div class="p-5 flex justify-between items-center cursor-pointer">
+                        <div class="flex items-center space-x-4 text-left">
+                             <div class="icon text-purple-500 flex-shrink-0"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10"><path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z" /></svg></div>
+                            <div>
+                                <h3 class="font-bold text-xl text-slate-800">Trouble du spectre de l'autisme</h3>
+                                <p class="text-slate-500">Déficits de communication sociale et comportements restreints/répétitifs.</p>
+                            </div>
+                        </div>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6 text-slate-500 transition-transform chevron"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" /></svg>
+                    </div>
+                     <div class="details">
+                        <div class="p-5 border-t border-slate-200 bg-slate-50 text-left">
+                            <h4 class="font-semibold mb-2">Caractéristiques :</h4>
+                            <ul class="list-disc list-inside text-slate-600 space-y-1">
+                                <li>Approche dimensionnelle unique (spectre).</li>
+                                <li>La révision TR clarifie les critères pour plus de précision.</li>
+                                <li>La comorbidité avec le TDAH est reconnue.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="card bg-white rounded-xl shadow-md border border-slate-200 overflow-hidden" data-card>
+                    <div class="p-5 flex justify-between items-center cursor-pointer">
+                        <div class="flex items-center space-x-4 text-left">
+                            <div class="icon text-amber-500 flex-shrink-0"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" /></svg></div>
+                            <div>
+                                <h3 class="font-bold text-xl text-slate-800">Trouble spécifique des apprentissages</h3>
+                                <p class="text-slate-500">Difficultés en lecture, écriture ou mathématiques.</p>
+                            </div>
+                        </div>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6 text-slate-500 transition-transform chevron"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" /></svg>
+                    </div>
+                    <div class="details">
+                        <div class="p-5 border-t border-slate-200 bg-slate-50 text-left">
+                            <h4 class="font-semibold mb-2">Approche unifiée :</h4>
+                             <ul class="list-disc list-inside text-slate-600 space-y-1">
+                                <li>Une seule entité diagnostique regroupant les difficultés.</li>
+                                <li>Spécification requise du ou des domaines affectés (lecture, expression écrite, mathématiques) et de la sévérité.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="card bg-white rounded-xl shadow-md border border-slate-200 overflow-hidden" data-card>
+                    <div class="p-5 flex justify-between items-center cursor-pointer">
+                        <div class="flex items-center space-x-4 text-left">
+                            <div class="icon text-rose-500 flex-shrink-0"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" /></svg></div>
+                            <div>
+                                <h3 class="font-bold text-xl text-slate-800">Trouble déficitaire de l'attention / hyperactivité (TDAH)</h3>
+                                <p class="text-slate-500">Pattern persistant d'inattention et/ou d'hyperactivité-impulsivité.</p>
+                            </div>
+                        </div>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6 text-slate-500 transition-transform chevron"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" /></svg>
+                    </div>
+                    <div class="details">
+                        <div class="p-5 border-t border-slate-200 bg-slate-50 text-left">
+                            <h4 class="font-semibold mb-2">Caractéristiques :</h4>
+                             <ul class="list-disc list-inside text-slate-600 space-y-1">
+                                <li>Les symptômes doivent être présents avant l'âge de 12 ans.</li>
+                                <li>Distinction de 3 présentations (inattentive, hyperactive/impulsive, combinée).</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card bg-white rounded-xl shadow-md border border-slate-200 overflow-hidden" data-card>
+                    <div class="p-5 flex justify-between items-center cursor-pointer">
+                        <div class="flex items-center space-x-4 text-left">
+                            <div class="icon text-cyan-500 flex-shrink-0"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /><path stroke-linecap="round" stroke-linejoin="round" d="M9 9.563C9 9.252 9.252 9 9.563 9h4.874c.311 0 .563.252.563.563v4.874c0 .311-.252.563-.563.563H9.564A.562.562 0 019 14.437V9.564z" /></svg></div>
+                            <div>
+                                <h3 class="font-bold text-xl text-slate-800">Autres troubles TND (DSM-5-TR)</h3>
+                                <p class="text-slate-500">Coordination, stéréotypies et tics.</p>
+                            </div>
+                        </div>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6 text-slate-500 transition-transform chevron"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" /></svg>
+                    </div>
+                    <div class="details">
+                        <div class="p-5 border-t border-slate-200 bg-slate-50 text-left">
+                             <ul class="list-disc list-inside text-slate-600 space-y-3">
+                                <li><strong>Trouble développemental de la coordination :</strong> Difficultés dans l'acquisition et l'exécution de compétences motrices coordonnées.</li>
+                                <li><strong>Trouble des mouvements stéréotypés :</strong> Comportements moteurs répétitifs, apparemment sans but.</li>
+                                <li><strong>Troubles des tics :</strong> Point important, ils sont <strong>classés dans les troubles neurodéveloppementaux</strong>, incluant le syndrome de Tourette.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        <!-- Comparison Section -->
+        <section class="mt-12 text-left">
+            <h2 class="header-title text-3xl font-bold text-slate-800 mb-8">CIM-11 vs. DSM-5-TR : Tableau Comparatif</h2>
+            <div class="bg-white p-6 rounded-xl shadow-md border border-slate-200 overflow-x-auto">
+                <table class="w-full comparison-table">
+                    <thead class="bg-slate-100">
+                        <tr>
+                            <th class="font-bold text-lg">Aspect</th>
+                            <th class="font-bold text-lg text-blue-600">CIM-11</th>
+                            <th class="font-bold text-lg text-blue-600">DSM-5-TR</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="bg-white">
+                            <td class="font-semibold">Classification des tics</td>
+                            <td>Classés dans les <strong>maladies du système nerveux</strong> (8A05)</td>
+                            <td>Classés dans les <strong>troubles neurodéveloppementaux</strong></td>
+                        </tr>
+                        <tr class="bg-slate-50">
+                            <td class="font-semibold">Langage pragmatique</td>
+                            <td>Inclus dans les troubles du langage développemental (6A01.22)</td>
+                            <td>Catégorie séparée : trouble de la communication sociale (pragmatique)</td>
+                        </tr>
+                        <tr class="bg-white">
+                            <td class="font-semibold">Troubles des apprentissages</td>
+                            <td>Catégories distinctes par domaine (lecture, écriture, maths)</td>
+                            <td>Une seule entité avec spécificateurs pour le domaine affecté</td>
+                        </tr>
+                        <tr class="bg-slate-50">
+                            <td class="font-semibold">Approche diagnostique</td>
+                            <td>Propose des indicateurs comportementaux (plus flexible)</td>
+                            <td>Privilégie les tests standardisés (plus strict)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+
+        <!-- Key Takeaways Section -->
+        <section class="mt-12 text-left">
+             <h2 class="header-title text-3xl font-bold text-slate-800 mb-8">Convergences & Perspectives</h2>
+             <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white p-6 rounded-xl shadow-md border border-slate-200">
+                    <h3 class="font-bold text-xl mb-3 text-blue-600">Principales Convergences</h3>
+                    <ul class="list-disc list-inside space-y-2 text-slate-600">
+                        <li><strong>Terminologie commune :</strong> Adoption du terme "troubles neurodéveloppementaux".</li>
+                        <li><strong>Comorbidité TSA-TDAH :</strong> Reconnaissance explicite de la coexistence des deux troubles.</li>
+                        <li><strong>Approche développementale :</strong> Accent mis sur l'impact précoce et les conséquences fonctionnelles.</li>
+                        <li><strong>Fin du "retard mental" :</strong> Remplacé par "troubles du développement intellectuel".</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md border border-slate-200">
+                    <h3 class="font-bold text-xl mb-3 text-blue-600">Implications & Avenir</h3>
+                    <ul class="list-disc list-inside space-y-2 text-slate-600">
+                        <li><strong>Harmonisation internationale :</strong> Les deux systèmes convergent pour faciliter le dialogue clinique et la recherche.</li>
+                        <li><strong>Défis diagnostiques :</strong> La nature transnosographique (partage de bases communes) des TND complexifie le diagnostic.</li>
+                        <li><strong>Vers une psychiatrie de précision :</strong> L'avenir pourrait tendre vers une approche plus dimensionnelle et individualisée, basée sur la "charge neurodéveloppementale" de chaque personne.</li>
+                    </ul>
+                </div>
+             </div>
+        </section>
+
+
+        <div class="mt-12 bg-blue-50 border border-blue-200 rounded-lg p-4 text-center">
+            <p class="font-semibold text-blue-800">Pour aller plus loin sur la définition générale des TND...</p>
+            <a href="https://notebooklm.google.com/notebook/329480a8-11fc-4bec-a2ad-dcd155b98f42" target="_blank" class="inline-block mt-2 text-blue-600 hover:underline font-bold">Cliquez ici</a>
+            <p class="font-semibold text-blue-800 mt-4">Pour consulter la carte mentale proposée par Oct-Opus formation...</p>
+            <a href="https://octopus-formations.fr/wp-content/uploads/2023/05/trouble-du-neurodeveloppement-.pdf" target="_blank" class="inline-block mt-2 text-blue-600 hover:underline font-bold">Cliquez ici</a>
+        </div>
+
+
+        <!-- Quiz Section -->
+        <section id="quiz-section" class="mt-12 text-left">
+            <h2 class="header-title text-3xl font-bold text-slate-800 mb-8">Testez vos connaissances (Partie 1)</h2>
+            <div class="bg-white p-6 rounded-xl shadow-md border border-slate-200 space-y-8">
+                
+                <!-- Question 1 -->
+                <div class="quiz-question" id="q1">
+                    <p class="font-semibold text-lg mb-4">1. Qu'est-ce qui caractérise principalement un trouble du neurodéveloppement (TND) ?</p>
+                    <div class="space-y-3">
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="false">A) Une affection qui apparaît uniquement à l'adolescence.</div>
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="false">B) Un trouble causé exclusivement par des facteurs environnementaux.</div>
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="true">C) Une affection débutant durant la période de développement et altérant le fonctionnement.</div>
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="false">D) Un problème passager qui se résout toujours avant l'âge adulte.</div>
+                    </div>
+                    <div class="feedback mt-3 text-sm font-medium"></div>
+                </div>
+
+
+                <!-- Question 2 -->
+                <div class="quiz-question" id="q2">
+                    <p class="font-semibold text-lg mb-4">2. Quels sont les deux domaines de symptômes principaux définissant le Trouble du Spectre de l'Autisme (TSA) ?</p>
+                    <div class="space-y-3">
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="false">A) Des difficultés d'attention et une hyperactivité motrice.</div>
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="true">B) Des déficits en communication/interaction sociale et des comportements/intérêts restreints et répétitifs.</div>
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="false">C) Une maladresse motrice et des difficultés en lecture.</div>
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="false">D) Des tics vocaux et des mouvements stéréotypés uniquement.</div>
+                    </div>
+                    <div class="feedback mt-3 text-sm font-medium"></div>
+                </div>
+
+
+                <!-- Question 3 -->
+                <div class="quiz-question" id="q3">
+                    <p class="font-semibold text-lg mb-4">3. Un enfant qui a du mal à soutenir son attention, oublie fréquemment ses affaires et semble "dans la lune" présente des symptômes relevant principalement de quel trouble ?</p>
+                    <div class="space-y-3">
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="false">A) Trouble du spectre de l'autisme.</div>
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="false">B) Trouble développemental de la coordination.</div>
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="false">C) Trouble spécifique des apprentissages.</div>
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="true">D) Trouble Déficitaire de l'Attention / Hyperactivité (TDAH), présentation inattentive.</div>
+                    </div>
+                    <div class="feedback mt-3 text-sm font-medium"></div>
+                </div>
+
+
+                <!-- Question 4 -->
+                <div class="quiz-question" id="q4">
+                    <p class="font-semibold text-lg mb-4">4. Quelle est la condition essentielle pour diagnostiquer un trouble spécifique des apprentissages (ex: dyslexie) ?</p>
+                    <div class="space-y-3">
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="false">A) L'enfant doit avoir un QI inférieur à la moyenne.</div>
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="true">B) Les difficultés ne sont pas mieux expliquées par une déficience intellectuelle, un trouble sensoriel ou un manque de scolarisation.</div>
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="false">C) Les difficultés doivent apparaître après l'âge de 12 ans.</div>
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="false">D) L'enfant présente aussi obligatoirement un TDAH.</div>
+                    </div>
+                    <div class="feedback mt-3 text-sm font-medium"></div>
+                </div>
+
+
+                <!-- Results -->
+                <div id="quiz-results" class="mt-8 text-center hidden">
+                     <p id="score-text" class="text-2xl font-bold text-blue-600"></p>
+                </div>
+                <div class="text-center mt-6">
+                    <button id="submit-quiz" class="bg-blue-600 text-white font-bold py-3 px-8 rounded-lg hover:bg-blue-700 transition-colors">Voir mes résultats (Partie 1)</button>
+                </div>
+
+
+            </div>
+        </section>
+
+
+        <!-- TDI Section -->
+        <section id="tdi-section" class="mt-12 text-left">
+            <h2 class="header-title text-3xl font-bold text-red-800 mb-8">Focus : Trouble du Développement Intellectuel</h2>
+            <div class="bg-white p-6 rounded-xl shadow-md border border-slate-200 space-y-6">
+                
+                <div>
+                    <h3 class="font-bold text-xl mb-3 text-red-800">Définition et Contexte</h3>
+                    <p class="text-slate-600 mb-3">Le trouble du développement intellectuel (TDI), anciennement appelé déficience intellectuelle, est un état caractérisé par des limitations significatives tant dans le <strong>fonctionnement intellectuel</strong> (raisonnement, apprentissage) que dans le <strong>comportement adaptatif</strong> (habiletés pratiques, sociales et conceptuelles).</p>
+                    <p class="text-slate-600">Ce trouble se manifeste avant l'âge de 18 ans et touche environ 1 à 3% de la population.</p>
+                </div>
+
+
+                <div>
+                    <h3 class="font-bold text-xl mb-3 text-red-800">Critères Diagnostiques</h3>
+                    <p class="text-slate-600 mb-4">Le diagnostic repose sur 3 critères qui doivent être présents simultanément :</p>
+                    <ul class="list-none space-y-4">
+                        <li>
+                            <h4 class="font-semibold text-lg mb-2 text-red-800">1. Déficits dans les fonctions intellectuelles</h4>
+                            <p class="text-slate-600">Confirmés par évaluation clinique et tests standardisés (QI généralement inférieur à 70). Cela inclut des difficultés dans :</p>
+                            <ul class="list-disc list-inside space-y-1 text-slate-600 mt-2 pl-4">
+                                <li>Le raisonnement, la résolution de problèmes, la planification.</li>
+                                <li>La pensée abstraite et le jugement.</li>
+                                <li>L'apprentissage académique et par l'expérience.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <h4 class="font-semibold text-lg mb-2 text-red-800">2. Limitations du comportement adaptatif</h4>
+                            <p class="text-slate-600">Impact significatif sur l'autonomie dans au moins un domaine :</p>
+                            <ul class="list-disc list-inside space-y-1 text-slate-600 mt-2 pl-4">
+                                <li><strong>Conceptuel :</strong> langage, lecture, écriture, mathématiques.</li>
+                                <li><strong>Social :</strong> relations interpersonnelles, responsabilité, respect des règles.</li>
+                                <li><strong>Pratique :</strong> soins personnels, gestion de l'argent, sécurité, transports.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <h4 class="font-semibold text-lg mb-2 text-red-800">3. Apparition durant la période développementale</h4>
+                            <p class="text-slate-600">Les déficits intellectuels et adaptatifs sont présents durant l'enfance ou l'adolescence.</p>
+                        </li>
+                    </ul>
+                </div>
+
+
+                <div>
+                    <h3 class="font-bold text-xl mb-3 text-red-800">Niveaux de Sévérité (basés sur le soutien nécessaire)</h3>
+                    <ul class="list-none space-y-3 text-slate-600">
+                        <li><strong>Léger (85% des cas) :</strong> QI environ 50-70. Peut vivre de façon autonome avec un soutien minimal.</li>
+                        <li><strong>Modéré (10% des cas) :</strong> QI environ 35-50. Nécessite un soutien pour la communication et les habiletés sociales.</li>
+                        <li><strong>Sévère (3-4% des cas) :</strong> QI environ 20-35. Soutien important pour les activités quotidiennes.</li>
+                        <li><strong>Profond (1-2% des cas) :</strong> QI inférieur à 20-25. Soutien intensif et constant dans tous les domaines.</li>
+                    </ul>
+                </div>
+
+
+                <div>
+                    <h3 class="font-bold text-xl mb-3 text-red-800">Impacts dans les Apprentissages</h3>
+                    <ul class="list-none space-y-4 text-slate-600">
+                        <li>
+                            <h4 class="font-semibold text-lg text-red-700">Enfance</h4>
+                            <p>L'impact est global. L'enfant apprend plus lentement et a des difficultés à acquérir les bases comme la lecture, l'écriture et le calcul. On observe des difficultés d'abstraction, d'attention et de mémoire de travail, nécessitant une pédagogie adaptée (enseignement spécialisé, aides humaines).</p>
+                        </li>
+                         <li>
+                            <h4 class="font-semibold text-lg text-red-700">Adolescence</h4>
+                            <p>L'écart avec les pairs s'accentue, notamment sur le plan de l'autonomie sociale et des apprentissages abstraits (philosophie, etc.). L'orientation scolaire se fait souvent vers des filières professionnelles adaptées, car l'accumulation de lacunes rend les études générales complexes.</p>
+                        </li>
+                         <li>
+                            <h4 class="font-semibold text-lg text-red-700">Âge adulte</h4>
+                            <p>Les possibilités d'emploi sont souvent restreintes aux milieux protégés ou adaptés. Une formation continue est nécessaire pour maintenir et développer les habiletés sociales et professionnelles. L'autonomie dépend grandement du niveau de sévérité et du soutien mis en place tout au long de la vie.</p>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="font-bold text-xl mb-3 text-red-800">Signes d'Alerte et Troubles Associés</h3>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-lg mb-2 text-red-800">Signes d'alerte précoces</h4>
+                            <ul class="list-disc list-inside space-y-2 text-slate-600">
+                                <li><strong>Nourrisson :</strong> Hypotonie, mauvais contact oculaire.</li>
+                                <li><strong>1-5 ans :</strong> Retard de langage et de marche.</li>
+                                <li><strong>Âge scolaire :</strong> Échec scolaire persistant.</li>
+                            </ul>
+                        </div>
+                        <div>
+                             <h4 class="font-semibold text-lg mb-2 text-red-800">Troubles fréquemment associés</h4>
+                            <ul class="list-disc list-inside space-y-2 text-slate-600">
+                                <li>TDAH (risque 3-4x supérieur)</li>
+                                <li>Troubles du spectre autistique (TSA)</li>
+                                <li>Épilepsie et troubles du sommeil</li>
+                                <li>Troubles anxio-dépressifs</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div>
+                    <h3 class="font-bold text-xl mb-3 text-red-800">Prise en Charge et Accompagnement</h3>
+                    <p class="text-slate-600">L'accompagnement est essentiel et doit être précoce, individualisé et multidisciplinaire (orthophonie, ergothérapie, psychomotricité). Il vise à promouvoir l'autodétermination, développer les compétences adaptatives et favoriser l'inclusion sociale tout au long de la vie.</p>
+                </div>
+            </div>
+        </section>
+        
+        <div class="mt-12 bg-red-50 border border-red-200 rounded-lg p-4 text-center">
+            <p class="font-semibold text-red-800">Pour aller plus loin sur le Trouble du Développement Intellectuel...</p>
+            <a href="https://notebooklm.google.com/notebook/42159b9a-ef4f-445b-838e-da5843dd19e3" target="_blank" class="inline-block mt-2 text-red-600 hover:underline font-bold">Cliquez ici</a>
+            <p class="font-semibold text-red-800 mt-4">Pour consulter la carte mentale proposée par Oct-Opus formation...</p>
+            <a href="https://octopus-formations.fr/wp-content/uploads/2023/05/trouble-du-developpement-intellectuel.pdf" target="_blank" class="inline-block mt-2 text-red-600 hover:underline font-bold">Cliquez ici</a>
+        </div>
+
+
+        <!-- TDI Quiz Section -->
+        <section id="quiz-section-tdi" class="mt-12 text-left">
+            <h2 class="header-title text-3xl font-bold text-red-800 mb-8">Testez vos connaissances (Partie 2 : TDI)</h2>
+            <div class="bg-white p-6 rounded-xl shadow-md border border-slate-200 space-y-8">
+                
+                <!-- Question 1 -->
+                <div class="quiz-question" id="q1-tdi">
+                    <p class="font-semibold text-lg mb-4">1. Lequel de ces éléments n'est PAS l'un des trois critères diagnostiques principaux du TDI ?</p>
+                    <div class="space-y-3">
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="false">A) Déficits dans les fonctions intellectuelles.</div>
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="true">B) Présence obligatoire d'un trouble moteur associé.</div>
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="false">C) Limitations du comportement adaptatif.</div>
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="false">D) Apparition durant la période développementale.</div>
+                    </div>
+                    <div class="feedback mt-3 text-sm font-medium"></div>
+                </div>
+
+
+                <!-- Question 2 -->
+                <div class="quiz-question" id="q2-tdi">
+                    <p class="font-semibold text-lg mb-4">2. Comment le DSM-5-TR détermine-t-il principalement la sévérité du TDI (légère, modérée, etc.) ?</p>
+                    <div class="space-y-3">
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="true">A) En se basant sur le niveau de soutien nécessaire dans le fonctionnement adaptatif.</div>
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="false">B) Uniquement en fonction du score de QI.</div>
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="false">C) En fonction du nombre de troubles associés.</div>
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="false">D) En fonction de l'âge de la personne au moment du diagnostic.</div>
+                    </div>
+                    <div class="feedback mt-3 text-sm font-medium"></div>
+                </div>
+
+
+                <!-- Question 3 -->
+                <div class="quiz-question" id="q3-tdi">
+                    <p class="font-semibold text-lg mb-4">3. Quel trouble est très fréquemment associé au TDI ?</p>
+                    <div class="space-y-3">
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="false">A) Le trouble panique.</div>
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="false">B) Le trouble de la personnalité narcissique.</div>
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="true">C) Le TDAH et le TSA.</div>
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="false">D) La schizophrénie.</div>
+                    </div>
+                    <div class="feedback mt-3 text-sm font-medium"></div>
+                </div>
+
+
+                <!-- Question 4 -->
+                <div class="quiz-question" id="q4-tdi">
+                    <p class="font-semibold text-lg mb-4">4. L'impact du TDI sur les apprentissages à l'âge scolaire se manifeste principalement par :</p>
+                    <div class="space-y-3">
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="false">A) Des difficultés uniquement en mathématiques.</div>
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="false">B) Une excellente mémoire mais des difficultés de raisonnement.</div>
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="true">C) Un ralentissement global des acquisitions (lecture, écriture, calcul) et des difficultés d'abstraction.</div>
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="false">D) Uniquement des troubles du comportement en classe.</div>
+                    </div>
+                    <div class="feedback mt-3 text-sm font-medium"></div>
+                </div>
+
+
+                <!-- Results -->
+                <div id="quiz-results-tdi" class="mt-8 text-center hidden">
+                     <p id="score-text-tdi" class="text-2xl font-bold text-red-800"></p>
+                </div>
+                <div class="text-center mt-6">
+                    <button id="submit-quiz-tdi" class="bg-red-800 text-white font-bold py-3 px-8 rounded-lg hover:bg-red-900 transition-colors">Voir mes résultats (Partie 2)</button>
+                </div>
+
+
+            </div>
+        </section>
+
+
+        <!-- Communication Disorders Section -->
+        <section id="comm-section" class="mt-12 text-left">
+            <h2 class="header-title text-3xl font-bold text-teal-800 mb-8">Focus : Troubles de la Communication</h2>
+            <div class="bg-white p-6 rounded-xl shadow-md border border-slate-200 space-y-6">
+                
+                <div>
+                    <h3 class="font-bold text-xl mb-3 text-teal-800">Définition Générale</h3>
+                    <p class="text-slate-600">Les troubles de la communication affectent la capacité d'une personne à utiliser, comprendre ou traiter le langage et la parole. Ils se manifestent tôt dans le développement et peuvent entraîner des altérations fonctionnelles persistantes dans la communication, la participation sociale et les résultats scolaires.</p>
+                </div>
+
+
+                <div>
+                    <h3 class="font-bold text-xl mb-3 text-teal-800">Critères Diagnostiques des Principaux Troubles</h3>
+                     <ul class="list-none space-y-4 text-slate-600">
+                        <li>
+                            <h4 class="font-semibold text-lg text-teal-700">Trouble du langage (ou TDL)</h4>
+                            <p>Difficultés persistantes d'acquisition et d'utilisation du langage (parlé, écrit, signé) dues à des déficits de compréhension ou de production (vocabulaire restreint, phrases mal structurées, discours limité).</p>
+                        </li>
+                         <li>
+                            <h4 class="font-semibold text-lg text-teal-700">Trouble des sons de la parole (ou TSP)</h4>
+                            <p>Difficulté persistante à produire les sons de la parole (phonèmes), ce qui interfère avec l'intelligibilité du discours et la communication orale.</p>
+                        </li>
+                         <li>
+                            <h4 class="font-semibold text-lg text-teal-700">Trouble de la fluidité (Bégaiement)</h4>
+                            <p>Perturbations de la fluidité normale de la parole, incluant des répétitions de sons/syllabes, des prolongations de sons, des blocages ou des mots hachés.</p>
+                        </li>
+                        <li>
+                            <h4 class="font-semibold text-lg text-teal-700">Trouble de la communication sociale (pragmatique)</h4>
+                            <p>Difficultés dans l'utilisation sociale de la communication verbale et non verbale (adapter son langage au contexte, suivre les règles de conversation, comprendre l'implicite), en l'absence de comportements répétitifs de type autistique.</p>
+                        </li>
+                    </ul>
+                </div>
+
+
+                <div>
+                    <h3 class="font-bold text-xl mb-3 text-teal-800">Impacts dans les Apprentissages</h3>
+                    <ul class="list-none space-y-4 text-slate-600">
+                        <li>
+                            <h4 class="font-semibold text-lg text-teal-700">Enfance</h4>
+                            <p>Le langage oral étant la base des apprentissages, un TDL entraîne un risque élevé de difficultés en lecture (dyslexie) et en expression écrite. Un TSP peut affecter la conscience phonologique, essentielle au décodage.</p>
+                        </li>
+                         <li>
+                            <h4 class="font-semibold text-lg text-teal-700">Adolescence</h4>
+                            <p>Les difficultés persistent pour comprendre les textes complexes et le langage abstrait. L'expression écrite reste un défi. Les troubles pragmatiques peuvent entraver les travaux de groupe et les exposés oraux.</p>
+                        </li>
+                         <li>
+                            <h4 class="font-semibold text-lg text-teal-700">Âge adulte</h4>
+                            <p>Peut influencer les choix de carrière. Des difficultés peuvent subsister dans la communication professionnelle (rédaction de rapports, compréhension des consignes complexes) et les interactions sociales au travail.</p>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="font-bold text-xl mb-3 text-teal-800">Points Clés à Retenir</h3>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-lg mb-2 text-teal-700">Diagnostic Différentiel</h4>
+                            <p class="text-slate-600">Il est crucial de distinguer un trouble de la communication d'un TSA (par la présence ou non de comportements restreints/répétitifs) ou d'un TDI (par l'évaluation du fonctionnement intellectuel global).</p>
+                        </div>
+                        <div>
+                             <h4 class="font-semibold text-lg mb-2 text-teal-700">Intervention Précoce</h4>
+                            <p class="text-slate-600">Une prise en charge orthophonique précoce, avant 5 ans, est fondamentale pour optimiser le pronostic en tirant parti de la plasticité cérébrale.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <div class="mt-12 bg-teal-50 border border-teal-200 rounded-lg p-4 text-center">
+            <p class="font-semibold text-teal-800">Pour aller plus loin sur les Troubles de la Communication...</p>
+            <a href="https://notebooklm.google.com/notebook/9ae6aee8-eaab-4e43-bbc9-32d6d8635013" target="_blank" class="inline-block mt-2 text-teal-600 hover:underline font-bold">Cliquez ici</a>
+            <p class="font-semibold text-teal-800 mt-4">Pour consulter la carte mentale proposée par Oct-Opus formation...</p>
+            <a href="https://octopus-formations.fr/wp-content/uploads/2023/05/trouble-du-langage.pdf" target="_blank" class="inline-block mt-2 text-teal-600 hover:underline font-bold">Cliquez ici</a>
+        </div>
+
+
+        <!-- Communication Quiz Section -->
+        <section id="quiz-section-comm" class="mt-12 text-left">
+            <h2 class="header-title text-3xl font-bold text-teal-800 mb-8">Testez vos connaissances (Partie 3 : Communication)</h2>
+            <div class="bg-white p-6 rounded-xl shadow-md border border-slate-200 space-y-8">
+                
+                <!-- Question 1 -->
+                <div class="quiz-question" id="q1-comm">
+                    <p class="font-semibold text-lg mb-4">1. Quel terme est aujourd'hui recommandé par le consensus international CATALISE pour désigner un trouble développemental grave et persistant du langage ?</p>
+                    <div class="space-y-3">
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="false">A) Retard de langage.</div>
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="false">B) Dysphasie.</div>
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="true">C) Trouble Développemental du Langage (TDL).</div>
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="false">D) Trouble de la phonation.</div>
+                    </div>
+                    <div class="feedback mt-3 text-sm font-medium"></div>
+                </div>
+
+
+                <!-- Question 2 -->
+                <div class="quiz-question" id="q2-comm">
+                    <p class="font-semibold text-lg mb-4">2. Une personne qui a un vocabulaire riche et construit des phrases correctes, mais qui ne parvient pas à adapter son discours à son interlocuteur ou à comprendre l'humour, présente des signes de quel trouble ?</p>
+                    <div class="space-y-3">
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="false">A) Trouble du langage (TDL).</div>
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="false">B) Trouble des sons de la parole (TSP).</div>
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="false">C) Bégaiement.</div>
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="true">D) Trouble de la communication sociale (pragmatique).</div>
+                    </div>
+                    <div class="feedback mt-3 text-sm font-medium"></div>
+                </div>
+
+
+                <!-- Question 3 -->
+                <div class="quiz-question" id="q3-comm">
+                    <p class="font-semibold text-lg mb-4">3. Quel est le principal critère qui distingue le trouble de la communication sociale (pragmatique) du trouble du spectre de l'autisme (TSA) ?</p>
+                    <div class="space-y-3">
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="false">A) La sévérité des difficultés de langage.</div>
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="true">B) L'absence de comportements, intérêts ou activités à caractère restreint et répétitif.</div>
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="false">C) Le QI de la personne.</div>
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="false">D) L'âge d'apparition des symptômes.</div>
+                    </div>
+                    <div class="feedback mt-3 text-sm font-medium"></div>
+                </div>
+
+
+                <!-- Question 4 -->
+                <div class="quiz-question" id="q4-comm">
+                    <p class="font-semibold text-lg mb-4">4. Un trouble du langage oral (TDL) dans la petite enfance est un facteur de risque majeur pour quel autre trouble des apprentissages ?</p>
+                    <div class="space-y-3">
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="true">A) La dyslexie-dysorthographie.</div>
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="false">B) La dyscalculie.</div>
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="false">C) Le trouble développemental de la coordination (dyspraxie).</div>
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="false">D) Le TDAH.</div>
+                    </div>
+                    <div class="feedback mt-3 text-sm font-medium"></div>
+                </div>
+
+
+                <!-- Results -->
+                <div id="quiz-results-comm" class="mt-8 text-center hidden">
+                     <p id="score-text-comm" class="text-2xl font-bold text-teal-800"></p>
+                </div>
+                <div class="text-center mt-6">
+                    <button id="submit-quiz-comm" class="bg-teal-800 text-white font-bold py-3 px-8 rounded-lg hover:bg-teal-900 transition-colors">Voir mes résultats (Partie 3)</button>
+                </div>
+
+
+            </div>
+        </section>
+
+
+        <!-- TSA Section -->
+        <section id="tsa-section" class="mt-12 text-left">
+            <h2 class="header-title text-3xl font-bold text-purple-800 mb-8">Focus : Trouble du Spectre de l'Autisme (TSA)</h2>
+            <div class="bg-white p-6 rounded-xl shadow-md border border-slate-200 space-y-6">
+                
+                <div>
+                    <h3 class="font-bold text-xl mb-3 text-purple-800">Définition et Conceptualisation</h3>
+                    <p class="text-slate-600 mb-3">Le trouble du spectre de l'autisme (TSA) est un trouble neurodéveloppemental complexe caractérisé par une grande hétérogénéité clinique. Le terme "spectre" est utilisé pour refléter la diversité des profils et des niveaux de sévérité. Il unifie des conditions autrefois distinctes comme l'autisme infantile ou le syndrome d'Asperger.</p>
+                </div>
+
+
+                <div>
+                    <h3 class="font-bold text-xl mb-3 text-purple-800">Critères Diagnostiques (La Dyade Autistique)</h3>
+                     <ul class="list-none space-y-4 text-slate-600">
+                        <li>
+                            <h4 class="font-semibold text-lg text-purple-700">A. Déficits persistants de la communication et des interactions sociales</h4>
+                            <p>Cela inclut des difficultés dans la réciprocité socio-émotionnelle, l'utilisation de la communication non verbale et la capacité à développer et maintenir des relations.</p>
+                        </li>
+                         <li>
+                            <h4 class="font-semibold text-lg text-purple-700">B. Comportements, intérêts ou activités à caractère restreint et répétitif</h4>
+                            <p>Cela se manifeste par des mouvements stéréotypés, une adhérence inflexible aux routines, des intérêts très restreints et intenses, et des particularités sensorielles (hyper- ou hypo-réactivité).</p>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="font-bold text-xl mb-3 text-purple-800">Impacts dans les Apprentissages</h3>
+                    <ul class="list-none space-y-4 text-slate-600">
+                        <li>
+                            <h4 class="font-semibold text-lg text-purple-700">Enfance</h4>
+                            <p>Le profil d'apprentissage est souvent hétérogène. Des difficultés peuvent survenir dans la compréhension du langage implicite et les tâches nécessitant des compétences sociales (travaux de groupe). Les intérêts spécifiques peuvent être un levier de motivation, mais aussi interférer avec les autres matières.</p>
+                        </li>
+                         <li>
+                            <h4 class="font-semibold text-lg text-purple-700">Adolescence</h4>
+                            <p>Les matières abstraites (littérature, philosophie) peuvent poser problème. Le décalage social s'accentue, et le besoin d'aménagements (environnement structuré, prévisible) devient crucial pour la réussite scolaire.</p>
+                        </li>
+                         <li>
+                            <h4 class="font-semibold text-lg text-purple-700">Âge adulte</h4>
+                            <p>L'orientation professionnelle est souvent influencée par le profil. Les personnes TSA peuvent exceller dans des domaines techniques ou logiques, mais rencontrer des difficultés dans les métiers exigeant une grande flexibilité sociale et de la communication.</p>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="font-bold text-xl mb-3 text-purple-800">Points Clés à Retenir</h3>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-lg mb-2 text-purple-700">Comorbidités fréquentes</h4>
+                            <p class="text-slate-600">Le TSA est très souvent associé à d'autres troubles, notamment le TDAH (30-80%), le trouble du développement intellectuel (30-40%), les troubles anxieux et les troubles du sommeil.</p>
+                        </div>
+                        <div>
+                             <h4 class="font-semibold text-lg mb-2 text-purple-700">Intervention Précoce et Intensive</h4>
+                            <p class="text-slate-600">Les interventions (ABA, TEACCH, etc.) sont plus efficaces lorsqu'elles sont précoces (avant 4 ans), intensives (20-25h/semaine), individualisées et impliquent la famille.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <div class="mt-12 bg-purple-50 border border-purple-200 rounded-lg p-4 text-center">
+            <p class="font-semibold text-purple-800">Pour aller plus loin sur le Trouble du Spectre de l'Autisme...</p>
+            <a href="https://notebooklm.google.com/notebook/2f647a00-81a4-4ccb-b555-45610e96dce9" target="_blank" class="inline-block mt-2 text-purple-600 hover:underline font-bold">Cliquez ici</a>
+            <p class="font-semibold text-purple-800 mt-4">Pour consulter la carte mentale proposée par Oct-Opus formation...</p>
+            <a href="https://octopus-formations.fr/wp-content/uploads/2023/05/trouble-du-spectre-de-lautisme-.pdf" target="_blank" class="inline-block mt-2 text-purple-600 hover:underline font-bold">Cliquez ici</a>
+        </div>
+
+
+        <!-- TSA Quiz Section -->
+        <section id="quiz-section-tsa" class="mt-12 text-left">
+            <h2 class="header-title text-3xl font-bold text-purple-800 mb-8">Testez vos connaissances (Partie 4 : TSA)</h2>
+            <div class="bg-white p-6 rounded-xl shadow-md border border-slate-200 space-y-8">
+                
+                <!-- Question 1 -->
+                <div class="quiz-question" id="q1-tsa">
+                    <p class="font-semibold text-lg mb-4">1. La "dyade autistique" sur laquelle repose le diagnostic de TSA fait référence à :</p>
+                    <div class="space-y-3">
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="false">A) Des difficultés de langage et des troubles moteurs.</div>
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="true">B) Des déficits de communication sociale ET des comportements restreints/répétitifs.</div>
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="false">C) Un QI faible et des problèmes de socialisation.</div>
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="false">D) Une anxiété sociale et des particularités sensorielles.</div>
+                    </div>
+                    <div class="feedback mt-3 text-sm font-medium"></div>
+                </div>
+
+
+                <!-- Question 2 -->
+                <div class="quiz-question" id="q2-tsa">
+                    <p class="font-semibold text-lg mb-4">2. Lequel de ces signes est considéré comme un signe d'alerte précoce majeur du TSA avant 12 mois ?</p>
+                    <div class="space-y-3">
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="false">A) L'enfant ne marche pas encore.</div>
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="false">B) L'enfant refuse certains aliments.</div>
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="true">C) Une absence ou une diminution du contact oculaire et du sourire social.</div>
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="false">D) L'enfant pleure souvent.</div>
+                    </div>
+                    <div class="feedback mt-3 text-sm font-medium"></div>
+                </div>
+
+
+                <!-- Question 3 -->
+                <div class="quiz-question" id="q3-tsa">
+                    <p class="font-semibold text-lg mb-4">3. Quelle est la comorbidité psychiatrique la plus fréquente associée au TSA ?</p>
+                    <div class="space-y-3">
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="true">A) Le TDAH et les troubles anxieux.</div>
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="false">B) La schizophrénie.</div>
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="false">C) Les troubles de la personnalité.</div>
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="false">D) Les troubles alimentaires uniquement.</div>
+                    </div>
+                    <div class="feedback mt-3 text-sm font-medium"></div>
+                </div>
+
+
+                <!-- Question 4 -->
+                <div class="quiz-question" id="q4-tsa">
+                    <p class="font-semibold text-lg mb-4">4. Le terme "spectre" dans TSA est utilisé pour :</p>
+                    <div class="space-y-3">
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="false">A) Indiquer que le trouble disparaît avec le temps.</div>
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="false">B) Suggérer que toutes les personnes autistes ont les mêmes symptômes.</div>
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="true">C) Refléter la grande diversité des manifestations et des niveaux de sévérité.</div>
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="false">D) Classer le trouble en fonction de la couleur préférée de la personne.</div>
+                    </div>
+                    <div class="feedback mt-3 text-sm font-medium"></div>
+                </div>
+
+
+                <!-- Results -->
+                <div id="quiz-results-tsa" class="mt-8 text-center hidden">
+                     <p id="score-text-tsa" class="text-2xl font-bold text-purple-800"></p>
+                </div>
+                <div class="text-center mt-6">
+                    <button id="submit-quiz-tsa" class="bg-purple-800 text-white font-bold py-3 px-8 rounded-lg hover:bg-purple-900 transition-colors">Voir mes résultats (Partie 4)</button>
+                </div>
+
+
+            </div>
+        </section>
+
+
+        <!-- TDAH Section -->
+        <section id="tdah-section" class="mt-12 text-left">
+            <h2 class="header-title text-3xl font-bold text-orange-800 mb-8">Focus : Trouble Déficitaire de l'Attention / Hyperactivité (TDAH)</h2>
+            <div class="bg-white p-6 rounded-xl shadow-md border border-slate-200 space-y-6">
+                
+                <div>
+                    <h3 class="font-bold text-xl mb-3 text-orange-800">Définition et Conceptualisation</h3>
+                    <p class="text-slate-600 mb-3">Le TDAH est un trouble neurodéveloppemental caractérisé par un mode persistant d'inattention et/ou d'hyperactivité-impulsivité qui interfère avec le fonctionnement. Touchant environ 3-6% des enfants et 3% des adultes, il résulte d'un dysfonctionnement des circuits cérébraux, notamment ceux impliquant la dopamine et la noradrénaline.</p>
+                </div>
+
+
+                <div>
+                    <h3 class="font-bold text-xl mb-3 text-orange-800">Critères Diagnostiques (DSM-5-TR)</h3>
+                     <ul class="list-none space-y-4 text-slate-600">
+                        <li>
+                            <h4 class="font-semibold text-lg text-orange-700">Critère A : Inattention et/ou Hyperactivité-Impulsivité</h4>
+                            <p>Présence d'au moins 6 symptômes (5 pour les 17 ans et +) dans l'une ou les deux catégories, persistant depuis au moins 6 mois.</p>
+                        </li>
+                        <li>
+                            <h4 class="font-semibold text-lg text-orange-700">Critère B : Apparition des symptômes</h4>
+                            <p>Plusieurs symptômes d'inattention ou d'hyperactivité-impulsivité étaient présents avant l'âge de 12 ans.</p>
+                        </li>
+                        <li>
+                            <h4 class="font-semibold text-lg text-orange-700">Critère C : Présence dans plusieurs contextes</h4>
+                            <p>Plusieurs symptômes sont présents dans au moins deux contextes différents (par exemple, à la maison, à l'école ou au travail ; avec des amis ou de la famille ; dans d'autres activités).</p>
+                        </li>
+                        <li>
+                            <h4 class="font-semibold text-lg text-orange-700">Critère D : Impact fonctionnel</h4>
+                            <p>Les symptômes interfèrent de manière claire avec le fonctionnement social, scolaire ou professionnel, ou en réduisent la qualité.</p>
+                        </li>
+                        <li>
+                            <h4 class="font-semibold text-lg text-orange-700">Critère E : Diagnostic différentiel</h4>
+                            <p>Les symptômes ne surviennent pas exclusivement au cours d'un trouble psychotique et ne sont pas mieux expliqués par un autre trouble mental.</p>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="font-bold text-xl mb-3 text-orange-800">Impacts dans les Apprentissages</h3>
+                    <ul class="list-none space-y-4 text-slate-600">
+                        <li>
+                            <h4 class="font-semibold text-lg text-orange-700">Enfance</h4>
+                            <p>L'inattention cause des erreurs d'étourderie et des difficultés à suivre les consignes. L'hyperactivité perturbe le climat de classe. Le travail est souvent incomplet ou bâclé, menant à un rendement scolaire inférieur aux capacités intellectuelles.</p>
+                        </li>
+                         <li>
+                            <h4 class="font-semibold text-lg text-orange-700">Adolescence</h4>
+                            <p>L'hyperactivité motrice diminue souvent, mais une agitation interne persiste. Les difficultés d'organisation et de planification (fonctions exécutives) deviennent un obstacle majeur face à l'augmentation du travail scolaire. Le risque de décrochage scolaire est accru.</p>
+                        </li>
+                         <li>
+                            <h4 class="font-semibold text-lg text-orange-700">Âge adulte</h4>
+                            <p>La procrastination, la mauvaise gestion du temps et l'inattention chronique peuvent entraîner une instabilité professionnelle. Les difficultés à planifier et organiser les tâches complexes persistent et impactent la performance au travail.</p>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="font-bold text-xl mb-3 text-orange-800">Points Clés à Retenir</h3>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-lg mb-2 text-orange-700">Comorbidités Massives</h4>
+                            <p class="text-slate-600">Environ 70% des personnes avec TDAH ont au moins un autre trouble associé : troubles des apprentissages "dys" (45%), trouble oppositionnel (35-66%), troubles anxieux (30-40%), troubles du sommeil.</p>
+                        </div>
+                        <div>
+                             <h4 class="font-semibold text-lg mb-2 text-orange-700">Déficit des Fonctions Exécutives</h4>
+                            <p class="text-slate-600">Le cœur du TDAH est un déficit du contrôle inhibiteur qui altère les fonctions exécutives : planification, organisation, mémoire de travail, flexibilité mentale et régulation des émotions.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <div class="mt-12 bg-orange-50 border border-orange-200 rounded-lg p-4 text-center">
+            <p class="font-semibold text-orange-800">Pour aller plus loin sur le TDAH...</p>
+            <a href="https://notebooklm.google.com/notebook/f7ee2db7-0df6-4af5-8c0a-ec6c976a4e18" target="_blank" class="inline-block mt-2 text-orange-600 hover:underline font-bold">Cliquez ici</a>
+            <p class="font-semibold text-orange-800 mt-4">Pour consulter la carte mentale proposée par Oct-Opus formation...</p>
+            <a href="https://octopus-formations.fr/wp-content/uploads/2023/05/trouble-de-lattention-avec-ou-sans-hyperactivite.pdf" target="_blank" class="inline-block mt-2 text-orange-600 hover:underline font-bold">Cliquez ici</a>
+        </div>
+
+
+        <!-- TDAH Quiz Section -->
+        <section id="quiz-section-tdah" class="mt-12 text-left">
+            <h2 class="header-title text-3xl font-bold text-orange-800 mb-8">Testez vos connaissances (Partie 5 : TDAH)</h2>
+            <div class="bg-white p-6 rounded-xl shadow-md border border-slate-200 space-y-8">
+                
+                <!-- Question 1 -->
+                <div class="quiz-question" id="q1-tdah">
+                    <p class="font-semibold text-lg mb-4">1. Laquelle de ces affirmations sur le TDAH est correcte selon les données actuelles ?</p>
+                    <div class="space-y-3">
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="false">A) C'est un trouble rare qui touche moins de 1% des enfants.</div>
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="false">B) Il disparaît toujours à l'adolescence.</div>
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="true">C) Il a une forte composante génétique et persiste souvent à l'âge adulte.</div>
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="false">D) Il est principalement causé par une mauvaise éducation.</div>
+                    </div>
+                    <div class="feedback mt-3 text-sm font-medium"></div>
+                </div>
+
+
+                <!-- Question 2 -->
+                <div class="quiz-question" id="q2-tdah">
+                    <p class="font-semibold text-lg mb-4">2. Le modèle de Barkley explique le TDAH par un déficit primaire de :</p>
+                    <div class="space-y-3">
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="false">A) La mémoire à long terme.</div>
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="true">B) L'inhibition comportementale, affectant les fonctions exécutives.</div>
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="false">C) L'intelligence verbale.</div>
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="false">D) Les compétences sociales.</div>
+                    </div>
+                    <div class="feedback mt-3 text-sm font-medium"></div>
+                </div>
+
+
+                <!-- Question 3 -->
+                <div class="quiz-question" id="q3-tdah">
+                    <p class="font-semibold text-lg mb-4">3. Quelle est la présentation clinique du TDAH la plus fréquente en consultation ?</p>
+                    <div class="space-y-3">
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="false">A) La présentation inattentive pure.</div>
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="false">B) La présentation hyperactive/impulsive pure.</div>
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="false">C) La présentation avec des tics uniquement.</div>
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="true">D) La présentation combinée (inattention + hyperactivité/impulsivité).</div>
+                    </div>
+                    <div class="feedback mt-3 text-sm font-medium"></div>
+                </div>
+
+
+                <!-- Question 4 -->
+                <div class="quiz-question" id="q4-tdah">
+                    <p class="font-semibold text-lg mb-4">4. La prise en charge recommandée pour le TDAH est dite "multimodale". Qu'est-ce que cela signifie ?</p>
+                    <div class="space-y-3">
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="false">A) Elle repose uniquement sur un traitement médicamenteux.</div>
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="true">C) Elle combine plusieurs approches : psychoéducation, interventions comportementales, aménagements scolaires et si besoin, un traitement médicamenteux.</div>
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="false">B) Elle se concentre uniquement sur la thérapie familiale.</div>
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="false">D) Elle ne traite que les troubles associés (comorbidités).</div>
+                    </div>
+                    <div class="feedback mt-3 text-sm font-medium"></div>
+                </div>
+
+
+                <!-- Results -->
+                <div id="quiz-results-tdah" class="mt-8 text-center hidden">
+                     <p id="score-text-tdah" class="text-2xl font-bold text-orange-800"></p>
+                </div>
+                <div class="text-center mt-6">
+                    <button id="submit-quiz-tdah" class="bg-orange-800 text-white font-bold py-3 px-8 rounded-lg hover:bg-orange-900 transition-colors">Voir mes résultats (Partie 5)</button>
+                </div>
+
+
+            </div>
+        </section>
+
+
+        <!-- TSAp Section -->
+        <section id="tsap-section" class="mt-12 text-left">
+            <h2 class="header-title text-3xl font-bold text-emerald-800 mb-8">Focus : Troubles Spécifiques des Apprentissages (TSAp)</h2>
+            <div class="bg-white p-6 rounded-xl shadow-md border border-slate-200 space-y-6">
+                
+                <div>
+                    <h3 class="font-bold text-xl mb-3 text-emerald-800">Définition et Conceptualisation</h3>
+                    <p class="text-slate-600 mb-3">Les troubles spécifiques des apprentissages (TSAp), aussi appelés "troubles dys", sont des troubles neurodéveloppementaux qui affectent la capacité à acquérir et à utiliser des compétences académiques spécifiques comme la lecture (dyslexie), l'expression écrite (dysorthographie) ou les mathématiques (dyscalculie). Ces difficultés sont persistantes et significatives, malgré une intelligence normale et une scolarisation adéquate.</p>
+                </div>
+
+
+                <div>
+                    <h3 class="font-bold text-xl mb-3 text-emerald-800">Critères Diagnostiques</h3>
+                    <p class="text-slate-600 mb-2">Les deux classifications principales, DSM-5-TR et CIM-11, s'accordent sur les points suivants :</p>
+                     <ul class="list-disc list-inside space-y-2 text-slate-600">
+                        <li>Les difficultés persistent depuis au moins 6 mois malgré des interventions ciblées.</li>
+                        <li>Les compétences académiques sont nettement inférieures au niveau attendu pour l'âge.</li>
+                        <li>Les difficultés ne sont pas mieux expliquées par un déficit intellectuel, sensoriel, un trouble neurologique ou un contexte défavorable.</li>
+                    </ul>
+                    <p class="text-slate-600 mt-3">Le <strong>DSM-5-TR</strong> utilise une catégorie unique "Specific Learning Disorder" avec des spécificateurs pour le domaine touché, tandis que la <strong>CIM-11</strong> propose des catégories distinctes pour la lecture, l'écriture et les mathématiques.</p>
+                </div>
+                
+                <div>
+                    <h3 class="font-bold text-xl mb-3 text-emerald-800">Impacts dans les Apprentissages</h3>
+                    <ul class="list-none space-y-4 text-slate-600">
+                        <li>
+                            <h4 class="font-semibold text-lg text-emerald-700">Enfance</h4>
+                            <p>La dyslexie ralentit l'accès à la lecture et donc à toutes les matières. La dysorthographie pénalise toutes les productions écrites. La dyscalculie bloque l'accès aux concepts mathématiques de base. Cela entraîne une fatigue cognitive importante et un risque de démotivation.</p>
+                        </li>
+                         <li>
+                            <h4 class="font-semibold text-lg text-emerald-700">Adolescence</h4>
+                            <p>La charge de travail accrue rend les difficultés plus pesantes. La lenteur et les erreurs persistent malgré les efforts. Des stratégies de compensation (ordinateur, logiciels d'aide) et des aménagements pédagogiques (tiers-temps) sont souvent indispensables.</p>
+                        </li>
+                         <li>
+                            <h4 class="font-semibold text-lg text-emerald-700">Âge adulte</h4>
+                            <p>Les difficultés ne disparaissent pas mais peuvent être compensées. L'impact se ressent dans la vie professionnelle (difficulté à rédiger des emails, à gérer un budget) et quotidienne. Le choix de carrière peut être orienté en fonction des forces et des faiblesses.</p>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="font-bold text-xl mb-3 text-emerald-800">Points Clés à Retenir</h3>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-lg mb-2 text-emerald-700">Étiologie et Comorbidités</h4>
+                            <p class="text-slate-600">Les TSAp ont une forte composante génétique. Ils sont très souvent associés à d'autres TND, en particulier le TDAH (30-40% de comorbidité) et les troubles du langage oral (TDL), qui sont un facteur de risque majeur pour la dyslexie.</p>
+                        </div>
+                        <div>
+                             <h4 class="font-semibold text-lg mb-2 text-emerald-700">Prise en Charge</h4>
+                            <p class="text-slate-600">La prise en charge repose sur une rééducation spécifique et intensive (orthophonie, ergothérapie, etc.) et des aménagements pédagogiques. L'objectif n'est pas de "guérir" mais de contourner et compenser les difficultés.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <div class="mt-12 bg-emerald-50 border border-emerald-200 rounded-lg p-4 text-center">
+            <p class="font-semibold text-emerald-800">Pour aller plus loin sur les Troubles Spécifiques des Apprentissages...</p>
+            <a href="https://notebooklm.google.com/notebook/c7d7b480-cfb5-42c1-bba3-655027a42587" target="_blank" class="inline-block mt-2 text-emerald-600 hover:underline font-bold">Cliquez ici</a>
+            <p class="font-semibold text-emerald-800 mt-4">Pour consulter la carte mentale proposée par Oct-Opus formation...</p>
+            <a href="https://octopus-formations.fr/wp-content/uploads/2023/05/troubles-des-apprentissages.pdf" target="_blank" class="inline-block mt-2 text-emerald-600 hover:underline font-bold">Cliquez ici</a>
+        </div>
+
+
+        <!-- TSAp Quiz Section -->
+        <section id="quiz-section-tsap" class="mt-12 text-left">
+            <h2 class="header-title text-3xl font-bold text-emerald-800 mb-8">Testez vos connaissances (Partie 6 : TSAp)</h2>
+            <div class="bg-white p-6 rounded-xl shadow-md border border-slate-200 space-y-8">
+                
+                <!-- Question 1 -->
+                <div class="quiz-question" id="q1-tsap">
+                    <p class="font-semibold text-lg mb-4">1. Quelle est la principale caractéristique d'un Trouble Spécifique des Apprentissages (TSAp) ?</p>
+                    <div class="space-y-3">
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="false">A) Un manque de motivation pour l'école.</div>
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="true">B) Une difficulté persistante malgré une intelligence normale et une scolarisation adéquate.</div>
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="false">C) Une difficulté générale dans toutes les matières scolaires.</div>
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="false">D) Un trouble qui n'affecte que l'écriture manuscrite.</div>
+                    </div>
+                    <div class="feedback mt-3 text-sm font-medium"></div>
+                </div>
+
+
+                <!-- Question 2 -->
+                <div class="quiz-question" id="q2-tsap">
+                    <p class="font-semibold text-lg mb-4">2. La dyslexie est un trouble spécifique de l'apprentissage qui affecte principalement :</p>
+                    <div class="space-y-3">
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="false">A) Le raisonnement mathématique.</div>
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="false">B) La coordination motrice fine.</div>
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="true">C) L'identification précise et fluide des mots écrits (lecture).</div>
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="false">D) La compréhension des règles sociales.</div>
+                    </div>
+                    <div class="feedback mt-3 text-sm font-medium"></div>
+                </div>
+
+
+                <!-- Question 3 -->
+                <div class="quiz-question" id="q3-tsap">
+                    <p class="font-semibold text-lg mb-4">3. Quelle comorbidité est la plus fréquemment retrouvée avec les TSAp ?</p>
+                    <div class="space-y-3">
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="false">A) Le trouble du spectre de l'autisme.</div>
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="false">B) Le trouble du développement intellectuel.</div>
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="false">C) Les troubles anxieux.</div>
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="true">D) Le TDAH.</div>
+                    </div>
+                    <div class="feedback mt-3 text-sm font-medium"></div>
+                </div>
+
+
+                <!-- Question 4 -->
+                <div class="quiz-question" id="q4-tsap">
+                    <p class="font-semibold text-lg mb-4">4. La prise en charge des TSAp vise principalement à :</p>
+                    <div class="space-y-3">
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="false">A) Guérir complètement le trouble pour qu'il n'y ait plus de difficultés.</div>
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="true">B) Contourner et compenser les difficultés par la rééducation et des aménagements.</div>
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="false">C) Attendre que les difficultés passent avec la maturité de l'enfant.</div>
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="false">D) Traiter le trouble uniquement avec des médicaments.</div>
+                    </div>
+                    <div class="feedback mt-3 text-sm font-medium"></div>
+                </div>
+
+
+                <!-- Results -->
+                <div id="quiz-results-tsap" class="mt-8 text-center hidden">
+                     <p id="score-text-tsap" class="text-2xl font-bold text-emerald-800"></p>
+                </div>
+                <div class="text-center mt-6">
+                    <button id="submit-quiz-tsap" class="bg-emerald-800 text-white font-bold py-3 px-8 rounded-lg hover:bg-emerald-900 transition-colors">Voir mes résultats (Partie 6)</button>
+                </div>
+
+
+            </div>
+        </section>
+
+
+        <!-- TDC Section -->
+        <section id="tdc-section" class="mt-12 text-left">
+            <h2 class="header-title text-3xl font-bold text-indigo-800 mb-8">Focus : Trouble Développemental de la Coordination (TDC / Dyspraxie)</h2>
+            <div class="bg-white p-6 rounded-xl shadow-md border border-slate-200 space-y-6">
+                
+                <div>
+                    <h3 class="font-bold text-xl mb-3 text-indigo-800">Définition et Conceptualisation</h3>
+                    <p class="text-slate-600 mb-3">Le Trouble Développemental de la Coordination (TDC), ou dyspraxie, est un trouble neurodéveloppemental qui affecte la capacité à planifier, organiser et exécuter des gestes volontaires. Il se traduit par une maladresse et une lenteur significatives, non expliquées par un déficit intellectuel ou une autre pathologie neurologique. Il touche 5 à 6% des enfants d'âge scolaire.</p>
+                </div>
+
+
+                <div>
+                    <h3 class="font-bold text-xl mb-3 text-indigo-800">Critères Diagnostiques (DSM-5-TR & CIM-11)</h3>
+                     <ul class="list-none space-y-4 text-slate-600">
+                        <li>
+                            <h4 class="font-semibold text-lg text-indigo-700">A. Compétences motrices inférieures à l'âge</h4>
+                            <p>L'acquisition et l'exécution des compétences motrices coordonnées sont nettement en dessous du niveau attendu pour l'âge chronologique.</p>
+                        </li>
+                         <li>
+                            <h4 class="font-semibold text-lg text-indigo-700">B. Interférence avec les activités quotidiennes</h4>
+                            <p>Les difficultés motrices interfèrent de manière significative et persistante avec les activités de la vie quotidienne (soins personnels, habillage), scolaires (écriture, sport) ou professionnelles.</p>
+                        </li>
+                         <li>
+                            <h4 class="font-semibold text-lg text-indigo-700">C. Début précoce</h4>
+                            <p>Les symptômes apparaissent au cours de la période précoce de développement.</p>
+                        </li>
+                        <li>
+                            <h4 class="font-semibold text-lg text-indigo-700">D. Exclusion d'autres troubles</h4>
+                            <p>Les difficultés motrices ne sont pas mieux expliquées par un trouble du développement intellectuel, une déficience visuelle ou une affection neurologique (ex: paralysie cérébrale).</p>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="font-bold text-xl mb-3 text-indigo-800">Impacts dans les Apprentissages</h3>
+                    <ul class="list-none space-y-4 text-slate-600">
+                        <li>
+                            <h4 class="font-semibold text-lg text-indigo-700">Enfance</h4>
+                            <p>L'écriture manuelle (dysgraphie) est souvent le premier signe d'alerte scolaire : lenteur, douleur, illisibilité. Les activités comme le dessin, la géométrie, le découpage et le sport sont très difficiles et sources de frustration.</p>
+                        </li>
+                         <li>
+                            <h4 class="font-semibold text-lg text-indigo-700">Adolescence</h4>
+                            <p>La lenteur d'écriture devient un handicap majeur. La prise de notes est difficile. Les matières nécessitant des manipulations (technologie, sciences) peuvent être compliquées. L'impact sur l'estime de soi est souvent important en raison des difficultés en sport et du décalage avec les pairs.</p>
+                        </li>
+                         <li>
+                            <h4 class="font-semibold text-lg text-indigo-700">Âge adulte</h4>
+                            <p>Le trouble persiste. L'écriture manuelle reste coûteuse. Certaines tâches professionnelles manuelles ou rapides sont difficiles. La conduite automobile peut être un défi. L'adulte développe des stratégies de compensation et d'évitement.</p>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="font-bold text-xl mb-3 text-indigo-800">Points Clés à Retenir</h3>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-lg mb-2 text-indigo-700">Comorbidités fréquentes</h4>
+                            <p class="text-slate-600">Le TDC est très souvent associé au TDAH (jusqu'à 50% des cas) et aux troubles spécifiques des apprentissages (dyslexie, dyscalculie), ce qui complexifie le profil et la prise en charge.</p>
+                        </div>
+                        <div>
+                             <h4 class="font-semibold text-lg mb-2 text-indigo-700">Prise en Charge</h4>
+                            <p class="text-slate-600">Elle est principalement non-médicamenteuse et repose sur l'ergothérapie et la psychomotricité. L'objectif est d'améliorer la planification des gestes et de trouver des stratégies de compensation (ex: usage de l'ordinateur).</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <div class="mt-12 bg-indigo-50 border border-indigo-200 rounded-lg p-4 text-center">
+            <p class="font-semibold text-indigo-800">Pour aller plus loin sur le TDC / Dyspraxie...</p>
+            <a href="https://notebooklm.google.com/notebook/cb7ccb25-e859-4e87-aacf-48d69e4f7637" target="_blank" class="inline-block mt-2 text-indigo-600 hover:underline font-bold">Cliquez ici</a>
+            <p class="font-semibold text-indigo-800 mt-4">Pour consulter la carte mentale proposée par Oct-Opus formation...</p>
+            <a href="https://octopus-formations.fr/wp-content/uploads/2023/05/trouble-developpemental-de-la-coordination.pdf" target="_blank" class="inline-block mt-2 text-indigo-600 hover:underline font-bold">Cliquez ici</a>
+        </div>
+
+
+        <!-- TDC Quiz Section -->
+        <section id="quiz-section-tdc" class="mt-12 text-left">
+            <h2 class="header-title text-3xl font-bold text-indigo-800 mb-8">Testez vos connaissances (Partie 7 : TDC/Dyspraxie)</h2>
+            <div class="bg-white p-6 rounded-xl shadow-md border border-slate-200 space-y-8">
+                
+                <!-- Question 1 -->
+                <div class="quiz-question" id="q1-tdc">
+                    <p class="font-semibold text-lg mb-4">1. Qu'est-ce qui définit le mieux le Trouble Développemental de la Coordination (TDC) ?</p>
+                    <div class="space-y-3">
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="false">A) Une faiblesse musculaire généralisée.</div>
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="true">B) Un déficit dans la planification et l'exécution des gestes volontaires, sans cause neurologique identifiée.</div>
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="false">C) Un simple manque d'entraînement sportif.</div>
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="false">D) Une conséquence directe d'un trouble de la vision.</div>
+                    </div>
+                    <div class="feedback mt-3 text-sm font-medium"></div>
+                </div>
+
+
+                <!-- Question 2 -->
+                <div class="quiz-question" id="q2-tdc">
+                    <p class="font-semibold text-lg mb-4">2. Quel est l'impact le plus courant du TDC sur les apprentissages scolaires ?</p>
+                    <div class="space-y-3">
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="false">A) Des difficultés à comprendre les consignes orales.</div>
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="false">B) Des problèmes de mémorisation des leçons.</div>
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="true">C) Une dysgraphie (difficultés majeures en écriture manuelle).</div>
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="false">D) Des difficultés uniquement en mathématiques.</div>
+                    </div>
+                    <div class="feedback mt-3 text-sm font-medium"></div>
+                </div>
+
+
+                <!-- Question 3 -->
+                <div class="quiz-question" id="q3-tdc">
+                    <p class="font-semibold text-lg mb-4">3. Le TDC est très fréquemment associé à quel autre trouble neurodéveloppemental ?</p>
+                    <div class="space-y-3">
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="true">A) Le TDAH.</div>
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="false">B) Le trouble du développement intellectuel.</div>
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="false">C) Le trouble de la communication sociale.</div>
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="false">D) Le bégaiement.</div>
+                    </div>
+                    <div class="feedback mt-3 text-sm font-medium"></div>
+                </div>
+
+
+                <!-- Question 4 -->
+                <div class="quiz-question" id="q4-tdc">
+                    <p class="font-semibold text-lg mb-4">4. La prise en charge principale du TDC repose sur :</p>
+                    <div class="space-y-3">
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="false">A) Un traitement médicamenteux pour améliorer la coordination.</div>
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="false">B) Des séances de sport intensives pour renforcer les muscles.</div>
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="false">C) Uniquement du soutien psychologique pour l'estime de soi.</div>
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="true">D) L'ergothérapie et la psychomotricité pour développer des stratégies de compensation.</div>
+                    </div>
+                    <div class="feedback mt-3 text-sm font-medium"></div>
+                </div>
+
+
+                <!-- Results -->
+                <div id="quiz-results-tdc" class="mt-8 text-center hidden">
+                     <p id="score-text-tdc" class="text-2xl font-bold text-indigo-800"></p>
+                </div>
+                <div class="text-center mt-6">
+                    <button id="submit-quiz-tdc" class="bg-indigo-800 text-white font-bold py-3 px-8 rounded-lg hover:bg-indigo-900 transition-colors">Voir mes résultats (Partie 7)</button>
+                </div>
+
+
+            </div>
+        </section>
+
+
+        <!-- TSM Section -->
+        <section id="tsm-section" class="mt-12 text-left">
+            <h2 class="header-title text-3xl font-bold text-slate-800 mb-8">Focus : Trouble Stéréotypé des Mouvements (TSM)</h2>
+            <div class="bg-white p-6 rounded-xl shadow-md border border-slate-200 space-y-6">
+                
+                <div>
+                    <h3 class="font-bold text-xl mb-3 text-slate-800">Définition et Conceptualisation</h3>
+                    <p class="text-slate-600 mb-3">Le trouble stéréotypé des mouvements (TSM) est un trouble neurodéveloppemental caractérisé par des comportements moteurs répétitifs, apparemment sans but et volontaires (ex: balancements, battements de mains). Ces mouvements, qui débutent tôt dans l'enfance, peuvent interférer avec les activités quotidiennes ou, dans certains cas, entraîner des auto-blessures.</p>
+                </div>
+
+
+                <div>
+                    <h3 class="font-bold text-xl mb-3 text-slate-800">Critères Diagnostiques</h3>
+                     <ul class="list-none space-y-4 text-slate-600">
+                        <li>
+                            <h4 class="font-semibold text-lg text-slate-700">Critère principal</h4>
+                            <p>Présence de comportements moteurs répétitifs, stéréotypés et non fonctionnels.</p>
+                        </li>
+                         <li>
+                            <h4 class="font-semibold text-lg text-slate-700">Impact fonctionnel</h4>
+                            <p>Les mouvements interfèrent avec les activités sociales, scolaires ou autres, ou entraînent des auto-blessures nécessitant une prise en charge.</p>
+                        </li>
+                         <li>
+                            <h4 class="font-semibold text-lg text-slate-700">Spécificateurs (DSM-5 & CIM-11)</h4>
+                            <p>Le diagnostic précise si le trouble est <strong>avec ou sans auto-lésion</strong>, et s'il est associé à une autre condition connue (ex: TSA, TDI). On distingue les formes primaires (sans autre trouble) des formes secondaires.</p>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="font-bold text-xl mb-3 text-slate-800">Impacts dans les Apprentissages</h3>
+                    <ul class="list-none space-y-4 text-slate-600">
+                        <li>
+                            <h4 class="font-semibold text-lg text-slate-700">Enfance</h4>
+                            <p>Les mouvements peuvent être une source de distraction majeure, empêchant l'enfant de se concentrer sur les tâches scolaires. Ils peuvent aussi entraver physiquement la participation à des activités motrices fines comme l'écriture.</p>
+                        </li>
+                         <li>
+                            <h4 class="font-semibold text-lg text-slate-700">Adolescence</h4>
+                            <p>Le principal impact devient social. La visibilité des mouvements peut entraîner des moqueries et un isolement. L'effort cognitif pour supprimer les stéréotypies en public peut épuiser les ressources attentionnelles nécessaires aux apprentissages.</p>
+                        </li>
+                         <li>
+                            <h4 class="font-semibold text-lg text-slate-700">Âge adulte</h4>
+                            <p>L'impact dépend de la persistance et de la sévérité des mouvements. Si elles sont importantes, les stéréotypies peuvent limiter les choix professionnels et interférer avec les tâches nécessitant de la concentration ou une posture stable.</p>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="font-bold text-xl mb-3 text-slate-800">Points Clés à Retenir</h3>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-lg mb-2 text-slate-700">Diagnostic Différentiel</h4>
+                            <p class="text-slate-600">Il est essentiel de différencier le TSM des tics (qui sont plus brefs et non rythmiques), des compulsions du TOC (liées à une obsession) et des stéréotypies s'inscrivant pleinement dans un TSA.</p>
+                        </div>
+                        <div>
+                             <h4 class="font-semibold text-lg mb-2 text-slate-700">Étiologie et Prise en Charge</h4>
+                            <p class="text-slate-600">L'origine est neurobiologique (dysfonctionnement des circuits cortico-striataux). La prise en charge est principalement comportementale et vise à remplacer le mouvement par un comportement plus adapté ou à gérer les déclencheurs (stress, ennui).</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <div class="mt-12 bg-slate-50 border border-slate-200 rounded-lg p-4 text-center">
+            <p class="font-semibold text-slate-800">Pour aller plus loin sur le Trouble Stéréotypé des Mouvements...</p>
+            <a href="https://notebooklm.google.com/notebook/1743ae54-3bc6-47d4-8859-c04ec513a303" target="_blank" class="inline-block mt-2 text-slate-600 hover:underline font-bold">Cliquez ici</a>
+        </div>
+
+
+        <!-- TSM Quiz Section -->
+        <section id="quiz-section-tsm" class="mt-12 text-left">
+            <h2 class="header-title text-3xl font-bold text-slate-800 mb-8">Testez vos connaissances (Partie 8 : TSM)</h2>
+            <div class="bg-white p-6 rounded-xl shadow-md border border-slate-200 space-y-8">
+                
+                <!-- Question 1 -->
+                <div class="quiz-question" id="q1-tsm">
+                    <p class="font-semibold text-lg mb-4">1. Qu'est-ce qui distingue principalement une stéréotypie d'un tic ?</p>
+                    <div class="space-y-3">
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="false">A) Les stéréotypies ne concernent que les mains.</div>
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="true">B) Les stéréotypies sont généralement plus rythmiques et prolongées, alors que les tics sont brefs et soudains.</div>
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="false">C) Seuls les tics peuvent être vocaux.</div>
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="false">D) Les stéréotypies sont toujours auto-lésives.</div>
+                    </div>
+                    <div class="feedback mt-3 text-sm font-medium"></div>
+                </div>
+
+
+                <!-- Question 2 -->
+                <div class="quiz-question" id="q2-tsm">
+                    <p class="font-semibold text-lg mb-4">2. Le diagnostic de TSM est souvent spécifié en fonction d'un critère de sévérité majeur. Lequel ?</p>
+                    <div class="space-y-3">
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="false">A) La fréquence des mouvements par heure.</div>
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="false">B) L'âge d'apparition des mouvements.</div>
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="true">C) La présence ou l'absence d'auto-lésion.</div>
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="false">D) Le nombre de parties du corps impliquées.</div>
+                    </div>
+                    <div class="feedback mt-3 text-sm font-medium"></div>
+                </div>
+
+
+                <!-- Question 3 -->
+                <div class="quiz-question" id="q3-tsm">
+                    <p class="font-semibold text-lg mb-4">3. Quand les stéréotypies s'inscrivent dans un tableau clinique plus large de difficultés sociales et d'intérêts restreints, quel diagnostic doit être privilégié ?</p>
+                    <div class="space-y-3">
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="true">A) Le Trouble du Spectre de l'Autisme (TSA).</div>
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="false">B) Le Trouble des Tics.</div>
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="false">C) Le Trouble Obsessionnel-Compulsif (TOC).</div>
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="false">D) Le TDAH.</div>
+                    </div>
+                    <div class="feedback mt-3 text-sm font-medium"></div>
+                </div>
+
+
+                <!-- Question 4 -->
+                <div class="quiz-question" id="q4-tsm">
+                    <p class="font-semibold text-lg mb-4">4. Les mouvements stéréotypés sont souvent exacerbés par :</p>
+                    <div class="space-y-3">
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="false">A) La concentration intense sur une tâche.</div>
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="false">B) Le bruit blanc.</div>
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="false">C) Uniquement la fatigue physique.</div>
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="true">D) Le stress, l'anxiété, l'ennui ou l'excitation.</div>
+                    </div>
+                    <div class="feedback mt-3 text-sm font-medium"></div>
+                </div>
+
+
+                <!-- Results -->
+                <div id="quiz-results-tsm" class="mt-8 text-center hidden">
+                     <p id="score-text-tsm" class="text-2xl font-bold text-slate-800"></p>
+                </div>
+                <div class="text-center mt-6">
+                    <button id="submit-quiz-tsm" class="bg-slate-800 text-white font-bold py-3 px-8 rounded-lg hover:bg-slate-900 transition-colors">Voir mes résultats (Partie 8)</button>
+                </div>
+
+
+            </div>
+        </section>
+
+
+        <!-- Tics Section -->
+        <section id="tics-section" class="mt-12 text-left">
+            <h2 class="header-title text-3xl font-bold text-cyan-800 mb-8">Focus : Troubles des Tics (Syndrome de Gilles de la Tourette)</h2>
+            <div class="bg-white p-6 rounded-xl shadow-md border border-slate-200 space-y-6">
+                
+                <div>
+                    <h3 class="font-bold text-xl mb-3 text-cyan-800">Définition et Conceptualisation</h3>
+                    <p class="text-slate-600 mb-3">Les troubles des tics sont des troubles neurodéveloppementaux caractérisés par des mouvements (moteurs) ou des vocalisations (phoniques) soudains, rapides, récurrents et non rythmiques. Les tics sont souvent précédés d'une sensation prémonitoire et peuvent être temporairement supprimés par un effort de volonté.</p>
+                </div>
+
+
+                <div>
+                    <h3 class="font-bold text-xl mb-3 text-cyan-800">Critères Diagnostiques</h3>
+                     <ul class="list-none space-y-4 text-slate-600">
+                        <li>
+                            <h4 class="font-semibold text-lg text-cyan-700">Syndrome de Gilles de la Tourette</h4>
+                            <p>Présence d'au moins <strong>deux tics moteurs ET au moins un tic vocal</strong>, présents depuis plus d'un an, avec un début avant 18 ans.</p>
+                        </li>
+                         <li>
+                            <h4 class="font-semibold text-lg text-cyan-700">Trouble chronique des tics moteurs ou vocaux</h4>
+                            <p>Présence de tics moteurs OU vocaux (mais pas les deux), depuis plus d'un an.</p>
+                        </li>
+                         <li>
+                            <h4 class="font-semibold text-lg text-cyan-700">Trouble provisoire des tics</h4>
+                            <p>Présence de tics moteurs et/ou vocaux depuis moins d'un an.</p>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="font-bold text-xl mb-3 text-cyan-800">Impacts dans les Apprentissages</h3>
+                    <ul class="list-none space-y-4 text-slate-600">
+                        <li>
+                            <h4 class="font-semibold text-lg text-cyan-700">Enfance</h4>
+                            <p>Les tics peuvent être une source de distraction en classe, pour l'enfant et ses pairs. L'effort pour contrôler les tics consomme des ressources attentionnelles, ce qui peut nuire à la concentration et aux performances scolaires. Des tics moteurs peuvent gêner l'écriture.</p>
+                        </li>
+                         <li>
+                            <h4 class="font-semibold text-lg text-cyan-700">Adolescence</h4>
+                            <p>Le pic de sévérité des tics se situe souvent vers 10-12 ans. L'impact psychosocial (moqueries, gêne) devient majeur. L'anxiété liée aux tics peut affecter la participation orale et les interactions sociales. Heureusement, une diminution des tics est fréquente en fin d'adolescence.</p>
+                        </li>
+                         <li>
+                            <h4 class="font-semibold text-lg text-cyan-700">Âge adulte</h4>
+                            <p>Pour beaucoup, les tics s'atténuent considérablement. Cependant, les comorbidités (TDAH, TOC, anxiété) peuvent persister et constituer le principal handicap. La gestion du stress reste un facteur clé pour contrôler les tics résiduels.</p>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="font-bold text-xl mb-3 text-cyan-800">Points Clés à Retenir</h3>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-lg mb-2 text-cyan-700">Comorbidités Majeures</h4>
+                            <p class="text-slate-600">Le lien avec le TDAH (50-60%) et le TOC (20-60%) est extrêmement fort. La prise en charge doit impérativement évaluer et traiter ces troubles associés, qui sont souvent plus handicapants que les tics eux-mêmes.</p>
+                        </div>
+                        <div>
+                             <h4 class="font-semibold text-lg mb-2 text-cyan-700">Prise en Charge Comportementale</h4>
+                            <p class="text-slate-600">La thérapie comportementale (HRT - renversement d'habitude) est une approche de première ligne efficace. Elle apprend à la personne à prendre conscience de la sensation prémonitoire et à la remplacer par un comportement de réponse concurrent.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <div class="mt-12 bg-cyan-50 border border-cyan-200 rounded-lg p-4 text-center">
+            <p class="font-semibold text-cyan-800">Pour aller plus loin sur les Troubles des Tics...</p>
+            <a href="https://notebooklm.google.com/notebook/9e277c1e-ddd3-494d-a68b-7d71a7c7fd1b" target="_blank" class="inline-block mt-2 text-cyan-600 hover:underline font-bold">Cliquez ici</a>
+        </div>
+
+
+        <!-- Tics Quiz Section -->
+        <section id="quiz-section-tics" class="mt-12 text-left">
+            <h2 class="header-title text-3xl font-bold text-cyan-800 mb-8">Testez vos connaissances (Partie 9 : Tics)</h2>
+            <div class="bg-white p-6 rounded-xl shadow-md border border-slate-200 space-y-8">
+                
+                <!-- Question 1 -->
+                <div class="quiz-question" id="q1-tics">
+                    <p class="font-semibold text-lg mb-4">1. Quel critère est nécessaire pour poser un diagnostic de Syndrome de Gilles de la Tourette ?</p>
+                    <div class="space-y-3">
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="false">A) La présence d'un seul tic moteur chronique.</div>
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="false">B) La présence de coprolalie (émission de mots grossiers).</div>
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="true">C) La présence de multiples tics moteurs ET d'au moins un tic vocal depuis plus d'un an.</div>
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="false">D) Des tics qui apparaissent uniquement après 18 ans.</div>
+                    </div>
+                    <div class="feedback mt-3 text-sm font-medium"></div>
+                </div>
+
+
+                <!-- Question 2 -->
+                <div class="quiz-question" id="q2-tics">
+                    <p class="font-semibold text-lg mb-4">2. Quelle est l'évolution la plus fréquente des tics avec l'âge ?</p>
+                    <div class="space-y-3">
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="false">A) Ils s'aggravent continuellement tout au long de la vie.</div>
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="true">B) Ils atteignent un pic de sévérité vers 10-12 ans puis diminuent souvent à l'adolescence.</div>
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="false">C) Ils apparaissent généralement à l'âge adulte.</div>
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="false">D) Ils ne changent jamais d'intensité.</div>
+                    </div>
+                    <div class="feedback mt-3 text-sm font-medium"></div>
+                </div>
+
+
+                <!-- Question 3 -->
+                <div class="quiz-question" id="q3-tics">
+                    <p class="font-semibold text-lg mb-4">3. Quels sont les deux troubles les plus fréquemment associés au Syndrome de Gilles de la Tourette ?</p>
+                    <div class="space-y-3">
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="false">A) La dyslexie et la dyscalculie.</div>
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="false">B) Le trouble du développement intellectuel et le TSA.</div>
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="true">C) Le TDAH et le TOC.</div>
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="false">D) La dépression et la schizophrénie.</div>
+                    </div>
+                    <div class="feedback mt-3 text-sm font-medium"></div>
+                </div>
+
+
+                <!-- Question 4 -->
+                <div class="quiz-question" id="q4-tics">
+                    <p class="font-semibold text-lg mb-4">4. Quel est l'impact principal des tics sur les apprentissages scolaires ?</p>
+                    <div class="space-y-3">
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="false">A) Ils améliorent la capacité de concentration.</div>
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="false">B) Ils n'ont aucun impact sur la scolarité.</div>
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="true">C) Ils peuvent perturber l'attention et gêner physiquement certaines tâches.</div>
+                        <div class="quiz-option border-2 border-slate-200 p-3 rounded-lg" data-correct="false">D) Ils facilitent la prise de parole en public.</div>
+                    </div>
+                    <div class="feedback mt-3 text-sm font-medium"></div>
+                </div>
+
+
+                <!-- Results -->
+                <div id="quiz-results-tics" class="mt-8 text-center hidden">
+                     <p id="score-text-tics" class="text-2xl font-bold text-cyan-800"></p>
+                </div>
+                <div class="text-center mt-6">
+                    <button id="submit-quiz-tics" class="bg-cyan-800 text-white font-bold py-3 px-8 rounded-lg hover:bg-cyan-900 transition-colors">Voir mes résultats (Partie 9)</button>
+                </div>
+
+
+            </div>
+        </section>
+
+
+    </div>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Tab switching logic
+            const tabs = {
+                btnCim11: document.getElementById('btn-cim11'),
+                btnDsm5: document.getElementById('btn-dsm5'),
+            };
+            const contents = {
+                contentCim11: document.getElementById('content-cim11'),
+                contentDsm5: document.getElementById('content-dsm5'),
+            };
+
+
+            tabs.btnCim11.addEventListener('click', () => {
+                tabs.btnCim11.classList.add('active');
+                tabs.btnDsm5.classList.remove('active');
+                contents.contentCim11.classList.remove('hidden');
+                contents.contentDsm5.classList.add('hidden');
+            });
+
+
+            tabs.btnDsm5.addEventListener('click', () => {
+                tabs.btnDsm5.classList.add('active');
+                tabs.btnCim11.classList.remove('active');
+                contents.contentDsm5.classList.remove('hidden');
+                contents.contentCim11.classList.add('hidden');
+            });
+
+
+            // Accordion (card expand/collapse) logic
+            const cards = document.querySelectorAll('[data-card]');
+            cards.forEach(card => {
+                const header = card.querySelector('.cursor-pointer');
+                const details = card.querySelector('.details');
+                const chevron = card.querySelector('.chevron');
+
+
+                header.addEventListener('click', () => {
+                    details.classList.toggle('open');
+                    chevron.classList.toggle('rotate-180');
+                });
+            });
+
+
+            // Generic Quiz Handler
+            function handleQuiz(quizContainerId) {
+                const quizContainer = document.getElementById(quizContainerId);
+                if (!quizContainer) return; // Exit if container not found
+                
+                const quizQuestions = quizContainer.querySelectorAll('.quiz-question');
+                const submitButton = quizContainer.querySelector('button[id^="submit-quiz"]');
+                const resultsContainer = quizContainer.querySelector('div[id^="quiz-results"]');
+                const scoreText = quizContainer.querySelector('p[id^="score-text"]');
+                let score = 0;
+
+
+                quizQuestions.forEach(question => {
+                    const options = question.querySelectorAll('.quiz-option');
+                    const feedbackEl = question.querySelector('.feedback');
+
+
+                    options.forEach(option => {
+                        option.addEventListener('click', () => {
+                            if (question.dataset.answered) return;
+
+
+                            question.dataset.answered = 'true';
+                            
+                            const isCorrect = option.dataset.correct === 'true';
+
+
+                            if (isCorrect) {
+                                score++;
+                                option.classList.add('correct');
+                                feedbackEl.textContent = 'Correct !';
+                                feedbackEl.classList.add('text-green-600');
+                            } else {
+                                option.classList.add('incorrect');
+                                const correctOption = question.querySelector('[data-correct="true"]');
+                                feedbackEl.innerHTML = `Incorrect. La bonne réponse était : <strong>${correctOption.textContent}</strong>`;
+                                feedbackEl.classList.add('text-red-600');
+                                correctOption.classList.add('correct');
+                            }
+
+
+                            options.forEach(opt => opt.classList.add('disabled'));
+                        });
+                    });
+                });
+
+
+                submitButton.addEventListener('click', () => {
+                    quizQuestions.forEach(question => {
+                        if (!question.dataset.answered) {
+                            const correctOption = question.querySelector('[data-correct="true"]');
+                            correctOption.classList.add('correct');
+                            question.querySelectorAll('.quiz-option').forEach(opt => opt.classList.add('disabled'));
+                        }
+                    });
+
+
+                    scoreText.textContent = `Votre score : ${score} / ${quizQuestions.length}`;
+                    resultsContainer.classList.remove('hidden');
+                    submitButton.style.display = 'none';
+                });
+            }
+
+
+            // Initialize all quizzes
+            handleQuiz('quiz-section');
+            handleQuiz('quiz-section-tdi');
+            handleQuiz('quiz-section-comm');
+            handleQuiz('quiz-section-tsa');
+            handleQuiz('quiz-section-tdah');
+            handleQuiz('quiz-section-tsap');
+            handleQuiz('quiz-section-tdc');
+            handleQuiz('quiz-section-tsm');
+            handleQuiz('quiz-section-tics');
+        });
+    </script>
+
+
+</body>
+</html>
